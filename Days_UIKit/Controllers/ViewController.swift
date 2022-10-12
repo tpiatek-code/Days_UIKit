@@ -13,46 +13,53 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var event: UILabel!
     
-    var name: String = "Twój event"
+    var name: String = "Your event"
     
-    var year: String = "0000"
-    var month: String = "00"
-    var day: String = "00"
-    var selectDate: String = ""
-    
-    var actualYear: String = ""
-    var actualMonth: String = ""
-    var actualDay: String = ""
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    var year: String = ""
+    var month: String = ""
+    var day: String = ""
 
-        
+    
+//    var actualYear: String = ""
+//    var actualMonth: String = ""
+//    var actualDay: String = ""
+    
+   
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         event.text = "\(name)!"
-        label.text = "\(year):\(month):\(day)"
-        
+        //label.text = "\(year):\(month):\(day)"
+        let dayss = createCount(Y: year, M: month, D: day)
+
+        label.text = "\(dayss)"
         
     }
+  
     
-    @IBAction func unwindToOne(_ sender: UIStoryboardSegue) {
-        var days = createCount(Y: year, M: month, D: day)
-        print("A")
-    }
     
+    @IBAction func unwindToFirst(_ sender: UIStoryboardSegue) {
+}
     func createCount(Y: String, M: String, D: String) -> Int {
+
+        let present = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())
+        let pastDate = "\(M)/\(D)/\(Y)"
         
-        let present = Date()
-        let pastDate = "M/D/Y"
         let formatter1 = DateFormatter()
         formatter1.dateFormat = "MM/dd/yyyy"
-        let pastDateDate = formatter1.date(from: pastDate)
-        
+        let pastDate2 = formatter1.date(from: pastDate)
+       
         // Count seconds and days between dates
-        let seconds = pastDateDate?.distance(to: present)
-        let days = (seconds! / 86400)
+
+        let seconds = pastDate2?.distance(to: present!)
+
         
-        let time = Int(days.rounded())
-        return time
+        var secondsInt = Int(seconds ?? 0)
+        let days = (secondsInt / 86400)
+        print(days)
+        let negativeDays = -days
+        
+        return negativeDays
     }
     
    
