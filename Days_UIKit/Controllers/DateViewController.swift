@@ -15,38 +15,37 @@ class DateViewController: UIViewController {
     
     var stateDownOrUp = true
     
-    
+    @IBOutlet weak var buttonDone: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         date.overrideUserInterfaceStyle = .dark
-        createTimer()
+        
+        shadowText(element: text)
+        shadowButton(element: buttonDone)
+        
+        
     }
     
     
+    func shadowText(element: UITextField) {
+        element.layer.shadowColor = UIColor.black.cgColor
+        element.layer.shadowOffset = CGSize(width: 5, height: 5)
+        element.layer.shadowRadius = 5
+        element.layer.shadowOpacity = 0.25
+    }
     
-    
-    
-    func createTimer() {
-        let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(fireTimer), userInfo: nil, repeats: true)
-        
+    func shadowButton(element: UIButton) {
+        element.layer.shadowColor = UIColor.black.cgColor
+        element.layer.shadowOffset = CGSize(width: 5, height: 5)
+        element.layer.shadowRadius = 5
+        element.layer.shadowOpacity = 0.25
     }
 
-    @objc func fireTimer() {
-        view.backgroundColor = .systemRed
-        
-    }
-    
-    
-    
-    
-    
-    
-       
+
     @IBAction func didTapSegment(_ sender: UISegmentedControl) {
-        
         if sender.selectedSegmentIndex == 0 {
             stateDownOrUp = true
         } else if sender.selectedSegmentIndex == 1 {
@@ -57,6 +56,7 @@ class DateViewController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         let destVC = segue.destination as! ViewController
         destVC.name = text.text ?? "unknown name"
         
@@ -73,14 +73,8 @@ class DateViewController: UIViewController {
             destVC.days = String(days)
 
         }
-        
-
     }
-    
-    
-    
-    
-    
+
 
     
     func createCount(Y: String, M: String, D: String) -> Int {
