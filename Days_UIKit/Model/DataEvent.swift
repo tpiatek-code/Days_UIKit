@@ -7,13 +7,7 @@
 
 import UIKit
 
-//struct Ivent: Codable {
-//    let iName: String
-//    let iDay: String
-//}
-
-class Ivent: NSObject, NSCoding {
-    
+class DataEvent: NSObject, NSCoding {
     
     var iName: String
     var iDay: String

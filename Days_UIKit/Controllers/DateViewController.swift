@@ -20,13 +20,10 @@ class DateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         date.overrideUserInterfaceStyle = .dark
         
         shadowText(element: text)
         shadowButton(element: buttonDone)
-        
-        
     }
     
     
@@ -54,7 +51,7 @@ class DateViewController: UIViewController {
         }
     }
     
-    
+     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         let destVC = segue.destination as! ViewController
@@ -74,7 +71,6 @@ class DateViewController: UIViewController {
 
         }
     }
-
 
     
     func createCount(Y: String, M: String, D: String) -> Int {
