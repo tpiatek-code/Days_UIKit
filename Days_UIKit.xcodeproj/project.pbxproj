@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		053A1A5D2951DBBF005C6FF6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053A1A5C2951DBBF005C6FF6 /* Constants.swift */; };
 		05A552A828E4392B007597B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A552A728E4392B007597B5 /* AppDelegate.swift */; };
 		05A552AA28E4392B007597B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A552A928E4392B007597B5 /* SceneDelegate.swift */; };
 		05A552AC28E4392B007597B5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A552AB28E4392B007597B5 /* ViewController.swift */; };
@@ -14,11 +15,13 @@
 		05A552B128E4392C007597B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05A552B028E4392C007597B5 /* Assets.xcassets */; };
 		05A552B428E4392C007597B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05A552B228E4392C007597B5 /* LaunchScreen.storyboard */; };
 		05A552BD28E43A21007597B5 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A552BC28E43A21007597B5 /* DateViewController.swift */; };
+		05A633E5294B327800EDAF7C /* DateViewController+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A633E4294B327800EDAF7C /* DateViewController+UITextField.swift */; };
 		05CAF50629092C4700AFE4DF /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CAF50529092C4700AFE4DF /* CustomTableViewCell.swift */; };
 		05CAF50929093EB700AFE4DF /* DataEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CAF50829093EB700AFE4DF /* DataEvent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		053A1A5C2951DBBF005C6FF6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		05A552A428E4392B007597B5 /* Days_UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Days_UIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05A552A728E4392B007597B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05A552A928E4392B007597B5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		05A552B328E4392C007597B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05A552B528E4392C007597B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05A552BC28E43A21007597B5 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
+		05A633E4294B327800EDAF7C /* DateViewController+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateViewController+UITextField.swift"; sourceTree = "<group>"; };
 		05CAF50529092C4700AFE4DF /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		05CAF50829093EB700AFE4DF /* DataEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEvent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -43,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		053A1A5E2951DC59005C6FF6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				053A1A5C2951DBBF005C6FF6 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		05A5529B28E4392B007597B5 = {
 			isa = PBXGroup;
 			children = (
@@ -62,8 +74,10 @@
 		05A552A628E4392B007597B5 /* Days_UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				05A633E3294B326000EDAF7C /* Extensions */,
 				05A552A728E4392B007597B5 /* AppDelegate.swift */,
 				05A552A928E4392B007597B5 /* SceneDelegate.swift */,
+				053A1A5E2951DC59005C6FF6 /* Utilities */,
 				05CAF50729092C4C00AFE4DF /* Model */,
 				05CAF504290926E300AFE4DF /* View */,
 				05A552BB28E43935007597B5 /* Controllers */,
@@ -81,6 +95,14 @@
 				05A552BC28E43A21007597B5 /* DateViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		05A633E3294B326000EDAF7C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				05A633E4294B327800EDAF7C /* DateViewController+UITextField.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		05CAF504290926E300AFE4DF /* View */ = {
@@ -173,10 +195,12 @@
 			files = (
 				05CAF50929093EB700AFE4DF /* DataEvent.swift in Sources */,
 				05A552BD28E43A21007597B5 /* DateViewController.swift in Sources */,
+				05A633E5294B327800EDAF7C /* DateViewController+UITextField.swift in Sources */,
 				05CAF50629092C4700AFE4DF /* CustomTableViewCell.swift in Sources */,
 				05A552AC28E4392B007597B5 /* ViewController.swift in Sources */,
 				05A552A828E4392B007597B5 /* AppDelegate.swift in Sources */,
 				05A552AA28E4392B007597B5 /* SceneDelegate.swift in Sources */,
+				053A1A5D2951DBBF005C6FF6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

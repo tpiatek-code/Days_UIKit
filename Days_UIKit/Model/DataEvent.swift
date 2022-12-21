@@ -9,22 +9,40 @@ import UIKit
 
 class DataEvent: NSObject, NSCoding {
     
-    var iName: String
-    var iDay: String
+    var name: String
+    var day: String
     
-    init(iName: String, iDay: String) {
-        self.iName = iName
-        self.iDay = iDay
+    var yearS: String
+    var monthS: String
+    var dayS: String
+    
+    init(name: String, day: String, yearS: String, monthS: String, dayS: String) {
+        self.name = name
+        self.day = day
+        
+        self.yearS = yearS
+        self.monthS = monthS
+        self.dayS = dayS
     }
+    
     
     required init?(coder aDecoder: NSCoder) {
-        iName = aDecoder.decodeObject(forKey: "iName") as? String ?? ""
-        iDay = aDecoder.decodeObject(forKey: "iDay") as? String ?? ""
+        name = aDecoder.decodeObject(forKey: "iName") as? String ?? ""
+        day = aDecoder.decodeObject(forKey: "iDay") as? String ?? ""
+        
+        yearS = aDecoder.decodeObject(forKey: "yearS") as? String ?? ""
+        monthS = aDecoder.decodeObject(forKey: "monthS") as? String ?? ""
+        dayS = aDecoder.decodeObject(forKey: "dayS") as? String ?? ""
     }
     
+    
     func encode(with coder: NSCoder) {
-        coder.encode(iName, forKey: "iName")
-        coder.encode(iDay, forKey: "iDay")
+        coder.encode(name, forKey: "iName")
+        coder.encode(day, forKey: "iDay")
+        
+        coder.encode(yearS, forKey: "yearS")
+        coder.encode(monthS, forKey: "monthS")
+        coder.encode(dayS, forKey: "dayS")
     }
     
 }
