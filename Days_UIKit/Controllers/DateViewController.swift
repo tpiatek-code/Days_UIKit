@@ -20,10 +20,7 @@ class DateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        date.overrideUserInterfaceStyle = .dark
-        text.delegate = self
-        
+        setupUI()
         
         shadowText(element: text)
         shadowButton(element: buttonDone)
@@ -57,6 +54,10 @@ class DateViewController: UIViewController {
         
     }
     
+    func setupUI() {
+        date.overrideUserInterfaceStyle = .dark
+    }
+    
     
     @IBAction func didTapSegment(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
@@ -79,6 +80,8 @@ class DateViewController: UIViewController {
         element.layer.shadowOffset = CGSize(width: 5, height: 5)
         element.layer.shadowRadius = 5
         element.layer.shadowOpacity = 0.25
+        
+        text.delegate = self
     }
     
     
